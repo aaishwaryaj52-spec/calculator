@@ -41,3 +41,145 @@
 <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Scientific Calculator">
+
+    <title>Modern Scientific Calculator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <!-- Header -->
+    <div class="header">
+
+        <div>
+            <h2>
+                <i class="fa-solid fa-calculator"></i>
+                Smart Calculator
+            </h2>
+            <small>HTML • CSS • JavaScript</small>
+        </div>
+
+        <button id="themeToggle" title="Dark / Light Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </div>
+
+    <!-- Display -->
+    <div class="display-box">
+
+        <div id="historyDisplay"></div>
+
+        <input
+            type="text"
+            id="display"
+            placeholder="0"
+            readonly>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+
+        <!-- Row 1 -->
+        <button class="function" onclick="clearDisplay()">AC</button>
+        <button class="function" onclick="deleteLast()">⌫</button>
+        <button class="function" onclick="percentage()">%</button>
+        <button class="operator" onclick="appendValue('/')">÷</button>
+
+        <!-- Row 2 -->
+        <button onclick="squareRoot()">√</button>
+        <button onclick="square()">x²</button>
+        <button onclick="appendValue('(')">(</button>
+        <button onclick="appendValue(')')">)</button>
+
+        <!-- Row 3 -->
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('*')">×</button>
+
+        <!-- Row 4 -->
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('-')">−</button>
+
+        <!-- Row 5 -->
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+
+        <!-- Row 6 -->
+        <button class="zero" onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+    </div>
+
+    <!-- Extra Actions -->
+    <div class="extra-buttons">
+
+        <button onclick="copyResult()">
+            <i class="fa-solid fa-copy"></i> Copy
+        </button>
+
+        <button onclick="clearHistory()">
+            <i class="fa-solid fa-trash"></i> History
+        </button>
+
+        <button onclick="downloadHistory()">
+            <i class="fa-solid fa-download"></i> Export
+        </button>
+
+    </div>
+
+    <!-- History -->
+    <div class="history">
+
+        <h3>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Calculation History
+        </h3>
+
+        <ul id="historyList"></ul>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <p>Keyboard Shortcuts</p>
+
+        <small>
+            Enter = Calculate |
+            Backspace = Delete |
+            Esc = Clear
+        </small>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
